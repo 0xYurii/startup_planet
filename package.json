@@ -1,0 +1,24 @@
+{
+  "name": "startup_planet",
+  "version": "1.0.0",
+  "description": "a dataset of the world’s most promising startups",
+  "homepage": "https://github.com/0xYurii/startup_planet#readme",
+  "bugs": {
+    "url": "https://github.com/0xYurii/startup_planet/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xYurii/startup_planet.git"
+  },
+  "license": "ISC",
+  "author": "Yuri Bee",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
