@@ -48,17 +48,33 @@ app.get('/api',(req,res)=>{
 
 app.get("/api/:field/:term",(req,res)=>{
     let filteredStartups=startups
+
+    const allowedFields = ['country', 'continent', 'industry']
+
+
         //devide the rea.params
         const {field,term}=req.params
         console.log(field)
         console.log(term)
 
-        // server data based on reqested link
-        filteredStartups=filteredStartups.filter(startups=>
-            startups[field].toLowerCase()===term.toLowerCase()
-        )
+        // check if the feild is allowed
+        if(allowedFields.includes(field)){
+            // server data based on reqested link
+            filteredStartups=filteredStartups.filter(startups=>
+                startups[field].toLowerCase()===term.toLowerCase()
+            ) 
+            res.json(filteredStartups)
+        }else{
+            
+            return res.status(400).json({message: "Search field not allowed. Please use only 'country', 'continent', 'industry'" })
+            
+        }
         
-        res.json(filteredStartups)
+
+
+
+        
+        
     
 })
 
