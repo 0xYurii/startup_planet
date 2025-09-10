@@ -23,11 +23,5 @@ export const getDataByPathParams = (req,res)=>{
             return res.status(400).json({message: "Search field not allowed. Please use only 'country', 'continent', 'industry'" })
             
         }
-        
-
-
-
-        
-        
     
 }
